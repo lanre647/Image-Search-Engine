@@ -5,9 +5,15 @@
   font-family: "Inter", sans-serif;
 }
 
+img {
+  width: 100%;
+}
+
 body {
   background: #39297b;
   color: #fff;
+  padding: 20px;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -22,14 +28,17 @@ h4 {
 }
 
 form {
-  width: 90%;
+  overflow: hidden;
+  width: 100%;
   max-width: 600px;
   margin: auto;
   height: 70px;
   background: #434989;
   display: flex;
   align-items: center;
+  /* flex-wrap: wrap; */
   border-radius: 8px;
+  margin-bottom: 40px;
 }
 
 form input {
@@ -76,9 +85,9 @@ form input::placeholder {
 
 #search-result {
   width: 80%;
-  margin: 100px auto 50px;
+  margin: 60px auto 50px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 40px;
 }
 
@@ -91,4 +100,27 @@ form input::placeholder {
 
 .line {
   color: #ff0000;
+}
+
+@media (max-width: 800px) {
+  form {
+    height: 40px;
+  }
+
+  form input {
+    width: 20px;
+  }
+
+  form button {
+    padding: 0 20px;
+    height: 100%;
+    background: #ff3929;
+    color: #fff;
+    font-size: 18px;
+    border: 0;
+    outline: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    cursor: pointer;
+  }
 }
